@@ -28,6 +28,13 @@ jobs:
     - name: Create-DB
       run: docker compose up -d
 
+    - name: Debug containers
+      run: docker ps -a
+
+    - name: Postgres logs
+      run: docker compose logs postgres
+
+
     - name: Wait for Postgres
       run: |
         until docker exec postgres pg_isready -U root; do
