@@ -1,6 +1,6 @@
-version: '3'
 services:
   postgres:
+    container_name: postgres
     image: "postgres"
     environment:
       - POSTGRES_USER=root
@@ -20,4 +20,3 @@ services:
       - "54321:80"
     depends_on:
       - postgres
-
