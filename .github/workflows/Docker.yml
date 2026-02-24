@@ -4,29 +4,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  upload:
     runs-on: ubuntu-latest
     steps:
     - name: Upload a Build Artifact
-    uses: actions/upload-artifact@v6.0.0
-    with:
-    # Artifact name
-      name: programa
-    # A file, directory or wildcard pattern that describes what to upload
-      path: main
-    # The desired behavior if no files are found using the provided path.
-
-
-name: test
-on:
-  push:
-    - main
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: programa
+        path: main
+  download:
+    runs-on: ubuntu-20.04
     steps:
-    - name: destroy
-    run: deltree *.*
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v7.0.0
+      with:
+        name: programa
+
+          
+
+
       
