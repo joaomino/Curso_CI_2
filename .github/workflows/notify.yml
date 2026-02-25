@@ -1,0 +1,14 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Just to notify a run
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Single deploy job since we're just deploying
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hi
+        run: echo "Hi bidubilu"
